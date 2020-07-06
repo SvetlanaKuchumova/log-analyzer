@@ -10,7 +10,11 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) throws IOException {
+        perform();
 
+    }
+
+    private static void perform() throws IOException {
         FileReader fr = new FileReader("logs/production.log");
         Scanner scan = new Scanner(fr);
         FileWriter fw = new FileWriter( "logs/sample1.txt" );
@@ -22,7 +26,7 @@ public class Main {
             String currentString;
             currentString = scan.nextLine();
             if (currentString.contains("Started GET")) {
-             //   System.out.println(currentString);
+                //   System.out.println(currentString);
                 fw.write(currentString + "\n");
                 foundStringCounter++;
             }
